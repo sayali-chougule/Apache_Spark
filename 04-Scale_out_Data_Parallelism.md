@@ -24,3 +24,7 @@
 - Schedules tasks
 - Houses APIs that define RDDs
 - Contains a distributed collection of elements that are parallelized across the cluster
+
+## Scaling Big Data in Spark
+
+![spark_architecture](spark_architecture.png)
