@@ -59,3 +59,8 @@ distData = sc.parallelize(data)
 - breaks problem into disrete parts that can be solved concurrently
 - runs simaltaneous instructions on multiple processors
 - employs an overall control/coordination mechanism
+
+## RDD and Parallel Programming
+
+- You can create an RDD by parallelizing an array of objects, or by splitting a dataset into partitions
+- Spark runs one task for each partition of the cluster
