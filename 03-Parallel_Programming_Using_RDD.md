@@ -64,3 +64,9 @@ distData = sc.parallelize(data)
 
 - You can create an RDD by parallelizing an array of objects, or by splitting a dataset into partitions
 - Spark runs one task for each partition of the cluster
+
+## Resilience and Spark
+
+- Resilent Distributed Datasets
+    - are always recoverable as they are immutable
+    - can persist or cache datasets in memory across operations, which speeds iterative operations
