@@ -44,3 +44,33 @@ user
 - Creates a comprehensive, unified framework to manage big data processing
 
 - Enables programming flexibility with easy-to-use Python, Scala, and Java APIs
+
+## Apache Spark and MapReduce Compared
+
+### Traditional Approach:
+
+- Create MapReduce jobs for complex jobs, interactive query, and online event hub processing involves lots of (slow) disk I/O
+i.e traditional MapReduce jobs create iterations that requires reads and writes to disk or HDFS. These reads and writes are time-consuming and expensive
+
+#### Solution:
+Apache Spark solves the read/write problem encountered with MapReduce by keeping much of the data required in memory and avoiding expensive disk I/O, thus reducing overall time by orders of magnitude
+
+## Spark and Big Data
+
+### Data Engineering
+
+- Core spark engine
+- clusters and executors
+- Cluster management 
+- SparkSQL
+- Catalyst Tungstem Dataframes
+
+### DS and ML
+
+- SparkML
+- DataFrames
+- Streaming
+
+
+
+ 
