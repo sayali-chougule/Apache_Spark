@@ -35,8 +35,27 @@ A resilient distributed dataset is
 
 ## Creating an RDD in Spark
 
-- Use an external or local file from Hadoop-supported file system such as 
+1. Use an external or local file from Hadoop-supported file system such as 
     - HDFS
     - Cassandra
     - HBase
     - Amazon S3
+
+2. Create RDD from collection
+
+Simple example of creating an RDD from a list in Scala and Python
+
+```sh
+# Python example
+data = [1,2,3,4,5]
+distData = sc.parallelize(data)
+```
+
+3. Apply a transformation on existing RDD to create a new RDD
+
+## What is Parallel Programming
+
+- is a simaltaneous use of multiple compute resources to solve a computational problem
+- breaks problem into disrete parts that can be solved concurrently
+- runs simaltaneous instructions on multiple processors
+- employs an overall control/coordination mechanism
