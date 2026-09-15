@@ -31,3 +31,12 @@ A resilient distributed dataset is
 - Amazon S3
 - and others
 - SQL and NoSQL
+
+
+## Creating an RDD in Spark
+
+- Use an external or local file from Hadoop-supported file system such as 
+    - HDFS
+    - Cassandra
+    - HBase
+    - Amazon S3
