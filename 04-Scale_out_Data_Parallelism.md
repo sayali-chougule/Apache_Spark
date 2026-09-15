@@ -28,3 +28,13 @@
 ## Scaling Big Data in Spark
 
 ![spark_architecture](spark_architecture.png)
+
+- Spark Application consists of driver program and executor program
+- Executor programs run on worker nodes
+- Spark can start additional processes on a worker node if there is enough memory and core is available
+- Similarly, executors can also take multiple cores for multithreaded calculations 
+- Spark distibutes RDDs among executors
+- Communication occurs among the driver and executors 
+- The driver contains the Spark jobs that the application needs to run and splits the jobs into tasks submitted to the executors
+- The driver receives the task results when the executors complete the tasks
+- We can add additional worker nodes to scale big data processing increamentally.    
