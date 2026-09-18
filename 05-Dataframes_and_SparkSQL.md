@@ -17,3 +17,10 @@ results = spark.sql(
 names = results.map(lambda p:
 p.name)
 ```
+
+## Spark SQL - Benefits
+
+- Includes a cost based optimizer, columnar storage, and code generation to make queries fast
+- scales to thoudands of nodes and multi-hour queries using the Spark engine, which provides full mid-query fault tolerance
+- Provides a programming abstraction called DataFrames and can also act as distributed SQL query engine
+
