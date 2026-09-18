@@ -24,3 +24,11 @@ p.name)
 - scales to thoudands of nodes and multi-hour queries using the Spark engine, which provides full mid-query fault tolerance
 - Provides a programming abstraction called DataFrames and can also act as distributed SQL query engine
 
+
+## DataFrames
+
+- Distributed collection of data organized into named columns
+- Conceptually equivalent to a table in a relational database or a dataframe in R/Python, but with reacher optimizations
+- Built on top of RDD API
+- Uses RDDs
+- Performs relational queries
