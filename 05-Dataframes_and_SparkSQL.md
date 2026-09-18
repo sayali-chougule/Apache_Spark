@@ -75,3 +75,35 @@ df.createTempView("people")
 - State-of-the-art optimization and code generation through the Spark SQL Catalyst optimizer
 - Seamless integration with all big data tooling and infrastructure via spark
 - API for Python, Java, Scala and R, which is in development via Spark R 
+
+## DataFrame + Spark SQL
+
+#### SQL Query
+
+```sh
+spark.sql("SELECT name FROM people").show()
+```
+
+#### DataFrame Python API
+1. 
+```sh
+df.select("name").show()
+```
+2. 
+```sh
+df.select(df["name"]).show
+```
+
+#### Result
+
+```sh
++-------+
+|name   |
++-------+
+|Michael|
++-------+
+|Andy   |
++-------+
+|Justin |
++-------+
+```
