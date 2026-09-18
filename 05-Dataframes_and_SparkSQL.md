@@ -43,3 +43,26 @@ df.printSchema()
 # Register the DataFrame as a SQL temporary view
 df.createTempView("people")
 ```
+
+## DataFrame Example
+
+**Input JSON file**
+```sh
+{"name": "Michael"}
+{"name": "Andy",
+"age":30}
+{"name":"Justin",
+"age":19}
+```
+
+**Created DataFrame**
+```sh
++-----+-------+
+|age  |name   |
++-----+-------+
+|null |Michael|
++-----+-------+
+|30   |Andy   |
++-----+-------+
+|19   |Justin |
++-----+-------+
