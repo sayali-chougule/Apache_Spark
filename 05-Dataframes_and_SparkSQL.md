@@ -107,3 +107,19 @@ df.select(df["name"]).show
 |Justin |
 +-------+
 ```
+
+**People who are above the age of 21**
+
+#### SQL Query
+
+```sh
+spark.sql("SELECT age, name
+FROM people 
+WHERE age > 21")
+```
+
+#### DataFrame Python API
+
+```sh
+df.filter(df["age"] > 21).show()
+```
