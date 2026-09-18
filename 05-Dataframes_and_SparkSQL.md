@@ -32,3 +32,14 @@ p.name)
 - Built on top of RDD API
 - Uses RDDs
 - Performs relational queries
+
+**Python code snippet to read from a JSON file and create a simple DataFrame**
+
+```sh
+df = spark.read.json("people.json")
+df.show()
+df.printSchema()
+
+# Register the DataFrame as a SQL temporary view
+df.createTempView("people")
+```
