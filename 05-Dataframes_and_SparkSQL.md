@@ -66,3 +66,12 @@ df.createTempView("people")
 +-----+-------+
 |19   |Justin |
 +-----+-------+
+```
+
+## DataFrame Benefits
+
+- Ability to scale from kilobytes to data on a single laptop to petabytes on large cluster
+- Support for a wide array of data formats and storage systems
+- State-of-the-art optimization and code generation through the Spark SQL Catalyst optimizer
+- Seamless integration with all big data tooling and infrastructure via spark
+- API for Python, Java, Scala and R, which is in development via Spark R 
