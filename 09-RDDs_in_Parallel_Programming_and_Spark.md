@@ -43,3 +43,22 @@ An action that aggregates all RDD elements
 - The DAG now points to the new RDD
 - The pointer that transforms RDD is returned to the Spark driver program
 - If there is an action, the driver program that calls the action evaluates the DAG only after Spark completes the action
+
+## Transformation Examples
+```
++----------------+------------------------------------------------------------+
+| Transformation | Discription                                                |
++----------------+------------------------------------------------------------+
+|map (*func*)    |Returns a new distributed dataset formed by passing each    |       
+|                |element of source through a function *func*                 |
++----------------+------------------------------------------------------------+
+|Filter (*func*) |Returns a new dataset formed by selecting those             |
++----------------+------------------------------------------------------------+
+|Distinct        |Returns a new dataset that contains the distinct elements of|
+|([numTasks])    |the source dataset                                          |
++----------------+------------------------------------------------------------+
+|flatmap (*func*)|Similar to map (*func*)                                     |
+|                |Can map to each input item to zero or more output items     |
+|                |*Func* should return a Seq rather than a single item        |
++----------------+------------------------------------------------------------+
+```
