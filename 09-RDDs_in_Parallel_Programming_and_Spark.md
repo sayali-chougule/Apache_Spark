@@ -62,3 +62,22 @@ An action that aggregates all RDD elements
 |                |*Func* should return a Seq rather than a single item        |
 +----------------+------------------------------------------------------------+
 ```
+
+## Action Examples
+```
++-------------------------+--------------------------------------------------+
+|Action                   |Description                                       |
++-------------------------+--------------------------------------------------+
+|reduce (*func*)          |*func* takes two arguements and returns one       |   
+|aggregates dataset       |Is cummutative                                    |
+|elements using function  |Is associative                                    |
+|(*func*)                 |Can be correctly computed in parallel             |
++-------------------------+--------------------------------------------------+
+|take (n)                 |Retuns an array with first n element              |
++-------------------------+--------------------------------------------------+
+|collect()                |Returns all elements as array                     |
++-------------------------+--------------------------------------------------+
+|takeOrdered              |Returns *n* elements ordered in ascending order   |
+|(n, key=*func*)          |or as specified by the optional key function      |
++-------------------------+--------------------------------------------------+
+```
