@@ -36,3 +36,10 @@ An action that aggregates all RDD elements
 - In Apache Spark DAG, vertices represents RDDs and edges represent operarions such as transformations or actions
 - If a node goes down, Spark replicates the DAG and restores the node
 
+## Transformations and Actions
+
+- Spark creates the DAG when creating an RDD
+- Spark enables the DAG schedular to perform a transformation and updates the DAG
+- The DAG now points to the new RDD
+- The pointer that transforms RDD is returned to the Spark driver program
+- If there is an action, the driver program that calls the action evaluates the DAG only after Spark completes the action
