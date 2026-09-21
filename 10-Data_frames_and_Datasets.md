@@ -21,3 +21,20 @@ A dataset is distributed collection of data that
 - Optimize query using Catalyst and Tungsten
 - Enable improved memory usage and caching
 - Use dataset API functions for aggregate operations including sum, avg, join and group by
+
+## Dataset vs DataFrames
+
+```
++----------------------------------+----------------------------------+
+|Datasets are                      |DataFrames are                    |                         
++----------------------------------+----------------------------------+
+|Strongly typed                    |Not typesafe                      |
++----------------------------------+----------------------------------+
+|Use unified Java and Scala APIs   |Use APIs in Java, Scala, Python   |
+|                                  |and R                             |  
++----------------------------------+----------------------------------+
+|Built on top of DataFrames and the|Built on top of RDDs and added in |
+|latest data abstraction added to  |earlier Spark versions            |
+|Spark                             |                                  |
++----------------------------------+----------------------------------+
+```
