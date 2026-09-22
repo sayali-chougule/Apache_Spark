@@ -19,8 +19,23 @@ df = pd.read_csv('file_name.cvs')
 df1 = spark.createDataFrame(df)
 ```
 
-### 2. Analyze the data using printschema
+### 2. Analyze the data 
+
+1. Using printSchema
 
 ```sh
 df1.printSchema()
 ```
+
+2. Using select function
+
+```sh
+df1.select('col1').show(5)
+```
+### 3. Transform the data
+
+*Guidelines*
+
+- Keep only the relevant data
+- Apply filters, joins, sources and tables, column operations, grouping and aggregations and other functions
+- Apply domain-specific data augmentations process
