@@ -39,3 +39,23 @@ df1.select('col1').show(5)
 - Keep only the relevant data
 - Apply filters, joins, sources and tables, column operations, grouping and aggregations and other functions
 - Apply domain-specific data augmentations process
+
+1. using filter
+
+```sh
+df1.filter(df1['age'] < 18).show(5)
+```
+
+2. using aggregation
+
+```sh
+car_counts = df1.groupby(['cyl']).agg({"wt":"count"})\ .sort("count(wt)", ascending = False).show(5)
+```
+
+#### Loading or Exporting the Data
+
+Is the final step of ETL pipeline
+- Export to another database
+- Export to disk as JSON files
+- Save the data to the Postgres database
+- Use an API to export data
