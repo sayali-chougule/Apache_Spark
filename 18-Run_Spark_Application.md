@@ -87,3 +87,32 @@ examples/src/main/python/pi.py 1000
 - To manage Spark dependencies:
     - Bundle project or libraries with application so they are accessible to driver and executive processes 
     - For Java or Scala based programs, create an uber-jar with application and dependencies together so it is easy to distribute to the cluster
+
+## Python Application Dependencies
+
+- To manage Python application dependencies, esure:
+    - cluster nodes can access the required dependencies with same version
+    - same python version is used
+    - use the `--py-files` argument so that `.py`, `.zip` or `.egg` files can be distributed to the cluster
+
+    ```sh
+    # Launching a PySpark application with dependency on "my_python_package"
+
+    ./bin/spark-submit <config and options> \
+    --py-files my_python_package.zip \
+    my_pyspark_application.py
+    ```
+
+## Spark Shell
+
+- Simple way to learn Spark API
+- Powerful tool to analyze data interactively
+- Use in local mode or with a cluster, same options as `spark-submit`
+- Can initiate in Scala (`bin/spark-shell`) and Python (`bin/pyspark`)
+
+## Spark Shell Environment
+
+- For both Scala and Python shells:
+    - SparkContext is automatically initialized and is available as `sc`
+    - SparkContext is automatically available as `spark`
+    - Expressions are entered into the shell and then evaluated in the driver to become jobs that are scheduled as tasks for the cluster
