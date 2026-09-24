@@ -44,3 +44,70 @@
 --master spark://<spark-master-url>:7077 \
 <additional configuration>
 ```
+
+## Apache Hadoop YARN
+
+- When choosing Apache Hadoop YARN, consider that it:
+    - is general purpose
+    - supports many other big data ecosystem frameworks
+    - requires its own configuration and setup
+    - has dependencies, making it more complex to deploy than Spark Standalone
+
+## How to run Spark on existing YARN cluster
+
+- 1. Specify the Master option '--master YARN' with 'spark-submit'
+
+```sh
+./bin/spark-submit \
+--master YARN \
+<additional configuration>
+```
+
+- 2. Spark will automatically connect with YARN using Hadoop configuration
+
+## Apache Mesos
+
+- **Apache Mesos** Cluster Managers can run Spark with other benefits, such as making partitioning:
+    - **Scalable** between many Spark instances
+    - **Dynamic** between Spark and other data frameworks
+
+## Kubernetes
+
+- Kubernetes cluster managers can run containerized applications, making it easier to:
+    - Automate deployment
+    - Simplify dependency management
+    - Scale the cluster
+
+- To launch Spark Application on Kubernetes
+
+```sh
+./bin/spark-submit \
+--master k8s://https://<k8s-apiserver-host>:<k8s-apiserver-port> \
+<additional configuration>
+```
+
+## Local Mode
+
+- Spark can also run in local mode which:
+    - Does not connect to cluster, making it easy to get started
+    - Runs in same process that calls 'spark-submit' and uses threads for running executor tasks
+    - can be useful for testing or debugging a Spark application 
+    - Runs a Spark application locally within a single process which can limit performance
+
+- To run Spark in local mode, use master option '--master local[#]' where # specifies number of cores to use
+
+```sh
+# Launch Spark in local mode with 8 cores
+./bin/spark-submit \
+--master local[8] \
+<additional configuration>
+```
+
+- Use an asterisk '*' to specify using all available cores
+
+```sh
+# Launch Spark in local mode with all available cores
+./bin/spark-submit \
+--master local[*] \
+<additional configuration>
+```
