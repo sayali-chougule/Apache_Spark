@@ -56,3 +56,27 @@ sum_rdd = grouped_rdd.mapValues(lambda values: sum([v[1] for v in values]))
 sum_rdd.collect() 
 # Output: [('apple', 7), ('banana', 4)]
 ```
+
+2. **Join**: Combining two data sets based on a common key
+
+```sh
+from pyspark import SparkContext
+sc = SparkContext("local", "JoinExample")
+rdd1 = sc.parallelize([("apple", 2), ("banana", 3)])
+rdd2 = sc.parallelize([("apple", 5), ("banana", 1)])
+joined_rdd = rdd1.join(rdd2)
+joined_rdd.collect() 
+# Output: [('apple', (2, 5)), ('banana', (3, 1))]
+```
+
+3. **Sort**: Rearranging data based on a specific criterion
+
+```sh
+from pyspark import SparkContext
+sc = SparkContext("local", "SortExample")
+data = [4, 2, 1, 3, 5]
+rdd = sc.parallelize(data)
+sorted_rdd = rdd.sortBy(lambda x: x, ascending=True)
+sorted_rdd.collect() 
+# Output: [1, 2, 3, 4, 5]
+```
