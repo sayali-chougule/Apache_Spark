@@ -38,3 +38,52 @@
 | See available options by cluster manager  | ' ./bin/spark-submit-help'| N/A          |
 +-------------------------------------------+---------------------------+--------------+
 ```
+
+## 'spark-submit' Application Files
+
+Final arguments depend on application language
+
+#### Java or Scala
+
+```sh
+<application-jar-path> <application-args> 
+```
+- Specifies the location of the JAR with your application and dependencies, followed by any arguments specific to the application
+
+#### Python 
+
+
+```sh
+<application-py-path> <application-args>
+```
+
+- Specifies the application python script followed by arguments specific to the application. Add files with `.py`, `.egg` or `.zip` using `--py-files` arguments
+
+## spark-submit Examples
+
+1. Launch Scala SparkPi using a jar, with master YARN. Estimate Pi with 1000 samples
+
+```sh
+# Launching Scala SparkPi to a YARN cluster
+
+./bin/spark-submit \
+--class org.apache.spark.examples.SparkPi \
+--master YARN \
+/path/to/examples.jar \
+1000
+```
+
+2. Launch Python SparkPi to a Spark standalone cluster with master at 207.184.161.138   
+
+```sh
+./bin/spark-submit \
+--master spark://207.184.161.138:7077 \
+examples/src/main/python/pi.py 1000
+1000
+```
+
+## Application Dependencies
+
+- To manage Spark dependencies:
+    - Bundle project or libraries with application so they are accessible to driver and executive processes 
+    - For Java or Scala based programs, create an uber-jar with application and dependencies together so it is easy to distribute to the cluster
